@@ -1,9 +1,17 @@
 #!/bin/bash
 
-mkdir /usr/local/nodejs_for_chromebook/ 2>/dev/null
-curl -L -o /usr/local/nodejs_for_chromebook/installer https://github.com/soyaaaaana/nodejs-for-chromebook/releases/download/binary/node_install 2>/dev/null
-curl -L -o /usr/local/lib/libatomic.so.1 https://raw.githubusercontent.com/soyaaaaana/nodejs-for-chromebook/main/library/libatomic.so.1 2>/dev/null
-curl -L -o /usr/local/lib/libstdc++.so.6 https://raw.githubusercontent.com/soyaaaaana/nodejs-for-chromebook/main/library/libstdc++.so.6 2>/dev/null
+ARCH=$(uname -m)
+
+if [ "$ARCH" = "aarch64" ]; then
+  URL_ARCH="arm64"
+elif [ "$ARCH" = "x86_64" ]; then
+  URL_ARCH="x64"
+else
+  echo "Unsupported architecture: $ARCH"
+  exit 1
+fi
+
+curl -L -o /usr/local/nodejs_for_chromebook/installer https://github.com/soyaaaaana/nodejs-for-chromebook/releases/download/binary/node_install_${FILE_ARCH} 2>/dev/null
 
 chmod a+rx /usr/local/nodejs_for_chromebook/installer
 /usr/local/nodejs_for_chromebook/installer

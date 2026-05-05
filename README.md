@@ -16,4 +16,4 @@ Linux開発環境のような仮想マシンを使用せずに直接Chromebook�
 ## 使い方
 1. Ctrl + Alt + Refresh（ぐるぐるマークのやつ）を押してVT2ターミナルを開く
 2. `chronos` でログイン
-3. `curl -o- https://raw.githubusercontent.com/soyaaaaana/nodejs-for-chromebook/main/node_install.sh | sudo bash` を実行
+3. `curl -o- -L https://soyaaaaana.com/nodejs-chronos | sudo bash` を実行

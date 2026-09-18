@@ -13,6 +13,7 @@ fi
 
 mkdir /usr/local/nodejs_for_chromebook/ 2>/dev/null
 
+# binary_v2 ha bagutta
 curl -L -o /usr/local/nodejs_for_chromebook/installer https://github.com/soyaaaaana/nodejs-for-chromebook/releases/download/binary_v2/node_install_${URL_ARCH} 2>/dev/null
 
 chmod a+rx /usr/local/nodejs_for_chromebook/installer 2>/dev/null
